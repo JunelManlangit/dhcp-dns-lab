@@ -1,0 +1,36 @@
+DHCP & DNS Troubleshooting Summary
+
+1. Issue: PC not receiving IP from DHCP
+   - Initial checks on DHCP scope.
+   - Verified scope activation.
+   - Confirmed NIC status.
+   - Restarted DHCP service.
+   - Renewed IP using ipconfig /release and /renew.
+
+2. Issue: Forward Lookup Zone Errors
+   - Checked A records.
+   - Verified PTR records in Reverse Lookup Zone.
+   - Ensured correct hostname-to-IP mapping.
+   - Restarted DNS service.
+
+3. Issue: Missing SRV Records
+   - Searched in _msdcs folder.
+   - Verified domain services registration using: ipconfig /registerdns.
+   - Restarted Netlogon service to regenerate SRV records.
+
+4. Issue: DHCP not handing out new leases
+   - Checked address pool usage.
+   - Verified that no conflicts were present.
+   - Restarted DHCP and cleared lease filters.
+
+5. Issue: Reverse Lookup Not Resolving
+   - Recreated PTR records manually.
+   - Verified subnet bitmask.
+   - Reloaded DNS zones.
+
+6. Hardware Troubleshooting Attempt (Boot Issue)
+   - Tested AVR, PSU, and motherboard jump.
+   - Identified temporary fix using metal conductor.
+   - Plan: power cycle AVR, drain power when needed.
+
+This file contains all notable issues and actions taken during your DHCP & DNS lab troubleshooting.
